@@ -146,6 +146,8 @@ def fill_circle(cx, cy, r, colour):
 
 
 def fill_ellipse(cx, cy, rx, ry, colour):
+    if rx <= 0 or ry <= 0:
+        return
     for dy in range(-ry, ry + 1):
         frac = 1.0 - (dy / ry) ** 2
         dx = int(rx * (frac ** 0.5)) if frac > 0 else 0
