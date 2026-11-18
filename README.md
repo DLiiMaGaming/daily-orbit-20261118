@@ -4,16 +4,17 @@
 
 # The Daily Orbit — 18 November 2026
 
-A deterministic Python program that draws a newspaper front page summing
-up the world news of Wednesday 18 November 2026, using only the Python
-standard library: its own 5x7 bitmap font, a small canvas and text-layout
-engine, geometric illustrations, and a hand-rolled PNG encoder.
+One Python file, standard library only, that paints the front page of
+a newspaper for Wednesday 18 November 2026 and saves it as a PNG.
+Letters are drawn from a 5x7 bitmap font stored as row bitmasks, the
+page is assembled on a small canvas class, and the PNG bytes are packed
+by hand with zlib — no packages, no network, no clock.
 
-The page carries the day's lead — US jets bomb an Iranian missile site
-on Qeshm Island and Tehran hits back across the Gulf — plus the Kerch
-bridge span falling, Ebola cases more than doubling in Congo, the US
-losing its measles-free status, and Xi hosting Putin in Shenzhen, with
-briefs and a numbers box below.
+What the page shows: the Gulf lead (US jets hit an Iranian missile
+site on Qeshm Island; Tehran answers across the Gulf), the Kerch
+bridge span coming down, Ebola passing 11,000 cases in Congo, the US
+losing measles-free status, and Xi hosting Putin in Shenzhen — plus
+briefs and a day-in-numbers box.
 
 Run it with:
 
@@ -21,5 +22,5 @@ Run it with:
 MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-It writes `entry.png` (1024x1024, about 23 KB) into that directory.
-Run it twice and the bytes are identical.
+That writes `entry.png` (1024x1024) into `out/`. Running it twice
+produces byte-identical files.
